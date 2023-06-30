@@ -64,14 +64,6 @@ while True:
         drawBox(img, bbox)
     else:
         cv2.putText(img, "Lost", (75, 90), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 0, 255), 2)
-
-    check, img = video.read()
-    
-    success, bbox = tracker.update(img)
-    if success:
-        drawBox(img, bbox)
-    else:
-        cv2.putText(img, "Lost", (75, 90), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 0, 255), 2)
     
     cv2.imshow("YES", img)
     key = cv2.waitKey(1)
